@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Shane Mongan - Fun/Worm</title>
+	<link rel="stylesheet" href="style.css?v=1.0" />
+	<script src="script.js"></script>
+</head>
+
+<body id="body">
+	<div class="topnav">
+			<a href="{{ baseURL }}/fun/index.html">Return</a>
+			<a id="clear" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height)">Clear</a>
+			<div class="rangeslider">
+				<div class="item">
+					Speed:
+					<input type="range" min="1" max="100" value="10" class="myslider" id="speed">
+				</div>
+				<div class="item">
+					Color Rate:
+					<input type="range" min="0" max="100" value="1" class="myslider" id="colorRate">
+				</div>
+			</div>
+		</div>
+	<canvas id="canvas">Browser does not support this webpage's content</canvas>
+</body>
+
+</html>

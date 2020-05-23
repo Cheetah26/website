@@ -1,0 +1,29 @@
+<!-- layout.nunjucks -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Shane Mongan</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="{{ baseURL }}/css/light.min.css" media="(prefers-color-scheme: light)">
+		<link rel="stylesheet" href="{{ baseURL }}/css/dark.min.css">
+		<link rel="stylesheet" href="{{ baseURL }}/css/mono.min.css">
+		<link rel="stylesheet" href="{{ baseURL }}/css/color.min.css">
+	</head>
+
+	<body>
+		<div class="container">
+			{% include "partials/_header.njk" %}
+
+			<hr>
+
+			<h3> {% block head %} {% endblock %} </h3>
+
+			<div class="content">
+				{% block content %} {% endblock %}
+			</div>
+
+			{% include "partials/_footer.njk" %}
+		</div>
+	</body>
+</html>
