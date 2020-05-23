@@ -3,7 +3,7 @@ var data = require('gulp-data');
 
 var nunjucksRender = require('gulp-nunjucks-render');
 gulp.task('nunjucks', function() {
-	gulp.src('src/pages/**/*.+(js|css)').pipe(gulp.dest('raw'));
+	gulp.src('src/pages/**/*.+(js|css)').pipe(gulp.dest('build'));
 	return gulp.src('src/pages/**/*.+(html|njk|nujkucks)')
 	    .pipe(data(function() {
 	      return require('./src/data.json')
@@ -11,15 +11,15 @@ gulp.task('nunjucks', function() {
 		.pipe(nunjucksRender({
 			path: ['src/templates']
 		}))
-		.pipe(gulp.dest('raw'));
+		.pipe(gulp.dest('build'));
 });
 
 
 var prettify = require('gulp-html-prettify');
 var htmlmin = require('gulp-htmlmin');
 gulp.task('clean', function () {
-	gulp.src('raw/**/*.+(js|css)').pipe(gulp.dest('dist'));
-	return gulp.src('raw/**/*.html')
+	gulp.src('build/**/*.+(js|css)').pipe(gulp.dest('dist'));
+	return gulp.src('build/**/*.html')
 		.pipe(prettify({indent_char: ' ', indent_size: 2}))
 		.pipe(htmlmin({ collapseWhitespace: true }))
 		.pipe(gulp.dest('dist'));
