@@ -1,18 +1,63 @@
 {% extends "layout.njk" %}
 
+{% set activePage="linux" %}
+
 {% block head %} Linux {% endblock %}
 
 {% block content %}
 	<p>
-	I began experimenting with <sub class="nano">(GNU/)</sub>Linux in the summer of 2019. I first tried Arch Linux dualbooting on my desktop. I have heard it argued that Arch is a poor choice for a beginner, but I would argue that it was quite beneficial because of how quickly it caused me to learn the OS. It also gave me a greater respect for the programs that I use daily after using the command line alternatives.
-	<br><br>
-	Currently I run Linux on all my computers. My desktop contuinues to dualboot running Manjaro and Windows 10. My laptop and a Dell Thin Client that I use for low power server applications both run strictly Debian.
+		I began experimenting with <sub class="nano">GNU/</sub>Linux in the summer of 2019. I first tried Arch Linux dualbooting on my desktop. I have heard it argued that Arch is a poor choice for a beginner, but I would argue that it was quite beneficial because of how quickly it caused me to learn the OS. It also gave me a greater respect for the programs that I use daily after using the command line alternatives.
+	</p>
+	<p>
+		Currently I run Linux on all my computers. My desktop contuinues to dualboot running Manjaro and Windows 10. My laptop and a Dell Thin Client that I use for low power server applications both run strictly Debian.
+	</p>
 	{# <br><br>
 	<span class="tacenter accent small"> Apologies in advance for the wall of text, I realize that some images would probably be a good idea to make this a more attention-grabbing read.</span> #}
-	<br><br>
-	<code class="large">Laptop</code>
-	<br><br>
-	I will start with my laptop since it's the machine I interact the most with.<br>
-	I am using Debian with DWM as a window manager. Although this is quite a strange combination, I  like that Debian has a lot of information online so I can solve any problems I have, while DWM gives me something to tinker with when I am bored. I actually really enjoy using a Tiling WM. For a few years before I started using Linux I was using AutoHotKey to make my Windows experiance more streamlined, so when I found out that there were so many programs out there on Linux that used Vim-like binding, I quickly found myself switching to those. With that said I really like qutebrowser as a web browser, and do my file browsing with nnn (I should eventually get around to linking these). The keyboard-focused workflow I have on my laptop has definitely taught me a lot along the way setting it up, and although some people would argue that they are impractical for daily usage, this is incorrect becuase trackpads are much less conveinient or precise than keyboard shortcuts, even if they take a little more time initially to setup and learn.
-</p>
+	<hr> <code class="large black bg-warning">Laptop</code>
+	<br>
+	<p>
+		I will start with my laptop since it's the machine I interact the most with, although arguably the least interesting setup-wise. It is a cheap Toshiba Satellite that I'm surprised has held up as well as it has. As mentioned previously it is running Debian with DWM as my window manager. I realize this is a bit of a strange combination, but I like that Debian has a lot of resources online in the rare chance I encounter a problem, while DWM gives me something to tinker with in my free time. I also really enjoy using tiling WM. Before switching to Linux there were a few years where I was really into setting up AutoHotKey to achieve a similar workflow. While some might say that keyboard-focused layouts are impractical, this is incorrect because trackpads cannot have the same precistion, and are less conveinient even considering the extra time to learn keyboard shortcuts.
+	</p>
+	<hr> <code class="large black bg-warning">Teeny</code>
+	<p>
+		This is my Dell Thin Client that I bought to run docker containers 24/7 without having a large effect on the power bill. I chose it over something like a Raspberry Pi becuase purchasing it used worked out to be about the same cost, for the same RAM, a proper Intel 64-bit CPU, and 120GB of SSD storage. It is currently running 7 containers.
+		<div class="container">
+			{% from "macros.njk" import table %}
+			{{ table([
+				[
+					'Container',
+					'Usage'
+				],
+				[
+					[
+						'Nginx',
+						'The webserver for this site & reverse proxy for other outward-facing containers'
+					],[
+						'LMS',
+						'Self-hosted music streaming with Subsonic API'
+					],[
+						'OpenVPN',
+						'VPN for VPN things (what else would it be?)'
+					], [
+						'DashMachine',
+						"A wonderful dashboard for linking to services web UI's"
+					], [
+						'Wake on Lan',
+						'A custom container for sending magic packets to LilBox'
+					], [
+						'BungeeCord',
+						'The Minecraft server proxy and connector'
+					], [
+						'Lobby',
+						'The obligitory Minecraft server (more on this and BungeeCord later)'
+					]
+				]
+			]) }}
+	  	</div>
+
+	</p>
+	<hr> <code class="large black bg-warning">LilBox</code>
+	<p>
+		LilBox is my server for when there is a need for processing power or large / valuable data. It is running Proxmox with a few VM's on it, which I wont be listing because they change quite frequently.
+	</p>
 {% endblock %}

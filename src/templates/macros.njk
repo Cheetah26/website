@@ -1,0 +1,14 @@
+{% macro table(data) %}
+	<table>
+		{% for col in data[0] %}
+			<th>{{ col }}</th>
+		{% endfor %}
+		{% for row in data[1] %}
+			<tr>
+				{% for col in row %}
+					<td>{{ col }}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+{% endmacro %}
