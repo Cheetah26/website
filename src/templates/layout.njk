@@ -1,11 +1,10 @@
-<!-- layout.nunjucks -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<title>Shane Mongan</title>
+		<link rel="icon" type="image/png" href="{{ baseURL }}/favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="{{ baseURL }}/css/light.min.css" media="(prefers-color-scheme: light)">
 		<link rel="stylesheet" href="{{ baseURL }}/css/dark.min.css">
 		<link rel="stylesheet" href="{{ baseURL }}/css/mono.min.css">
 		<link rel="stylesheet" href="{{ baseURL }}/css/color.min.css">
@@ -22,6 +21,8 @@
 			<div class="content">
 				{% block content %} {% endblock %}
 			</div>
+
+			<br>
 
 			{% include "partials/_footer.njk" %}
 		</div>
