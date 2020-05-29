@@ -1,3 +1,4 @@
 {
-	"baseURL": "/home/shane/files/website/dist"
+	"baseURL": "/home/shane/files/website/build/",
+	"_baseURL": "https://shanemongan.com"
 }

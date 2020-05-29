@@ -26,7 +26,15 @@ gulp.task('clean', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-var run = gulp.series('nunjucks', 'clean');
+var imagemin= require('gulp-imagemin');
+var path = require('path');
+gulp.task('imagemin', function () {
+    return gulp.src( 'src/images/**/*.jpg' )
+        .pipe(imagemin())
+        .pipe(gulp.dest('build/'));
+});
+
+var run = gulp.series('nunjucks');
 
 var watch = require('gulp-watch');
 gulp.task('watch', function (done) {
