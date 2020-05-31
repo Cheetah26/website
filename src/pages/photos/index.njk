@@ -9,42 +9,60 @@
 		Although I am not a photographer and have never claimed to be one, I like to think that I take some pretty good pictures once and a while. With that said, it would be a shame for nobody to see them, so here they are.
 	</p>
 	<hr>
-	{# <div class="img-container">
-		<img src="{{ baseURL }}/photos/img/LRM_EXPORT_20170722_142624.jpg" alt="test picture"/>
-	</div>
 
-	<div class="img-container">
-		<img src="{{ baseURL }}/photos/img/LRM_EXPORT_20170720_064614.jpg" alt="test picture"/>
-	</div> #}
+	{% set path = baseURL + "/photos/img" %}
+
 	<div class="row">
-		<div class="8 col">
-			<div class="row">
-				<div class="img-container">
-					<img src="{{ baseURL }}/photos/img/LRM_EXPORT_20170722_142624.jpg" alt="test picture"/>
-				</div>
-			</div>
-			<div class="row">
-				<div class="img-container">
-					<img src="{{ baseURL }}/photos/img/LRM_EXPORT_20170722_142624.jpg" alt="test picture"/>
-				</div>
-			</div>
+		<div class="column">
+			<img src="{{ path }}/1.jpg">
+			<img src="{{ path }}/4.jpg">
+			<img src="{{ path }}/7.jpg">
+			<img src="{{ path }}/10.jpg">
+			<img src="{{ path }}/13.jpg">
 		</div>
-		<div class="img-container 4 col">
-			<img src="{{ baseURL }}/photos/img/LRM_EXPORT_20170720_064614.jpg" alt="test picture"/>
+		<div class="column">
+			<img src="{{ path }}/2.jpg">
+			<img src="{{ path }}/5.jpg">
+			<img src="{{ path }}/8.jpg">
+			<img src="{{ path }}/11.jpg">
+			<img src="{{ path }}/14.jpg">
 		</div>
+		<div class="column">
+			<img src="{{ path }}/3.jpg">
+			<img src="{{ path }}/6.jpg">
+			<img src="{{ path }}/9.jpg">
+			<img src="{{ path }}/12.jpg">
+			<img src="{{ path }}/15.jpg">
 	</div>
-
 
 	<style>
-	.img-container {
-		/* width: 400px; */
-		height: 100%;
-	}
-
-	/* resize images */
-	.img-container img {
-		width: 100%;
-		height: auto;
+	.row {
+		  display: flex;
+		  flex-wrap: wrap;
+		  padding: 0 4px;
+		}
+		.column {
+		  flex: 33%;
+		  max-width:33%;
+		  padding: 0 4px;
+		}
+		.column img {
+		  margin-top: 8px;
+		  vertical-align: middle;
+		  width: 100%;
+		}
+		@media screen and (max-width: 800px) {
+		  .column {
+		    flex: 50%;
+		    max-width: 50%;
+		  }
+		}
+		@media screen and (max-width: 600px) {
+		  .column {
+		    flex: 100%;
+		    max-width: 100%;
+		  }
+		}
 	}
 	</style>
 {% endblock %}

@@ -4,7 +4,7 @@ var data = require('gulp-data');
 var nunjucksRender = require('gulp-nunjucks-render');
 gulp.task('nunjucks', function(done) {
 	gulp.src(['src/pages/**/*', '!src/pages/**/*.+(html|njk)']).pipe(gulp.dest('build'));
-	gulp.src('src/pages/**/*.+(html|njk)')
+	return gulp.src('src/pages/**/*.+(html|njk)')
 	    .pipe(data(function() {
 	      return require('./src/data.json')
 	    }))
@@ -12,7 +12,7 @@ gulp.task('nunjucks', function(done) {
 			path: ['src/templates']
 		}))
 		.pipe(gulp.dest('build'));
-	done();
+	// done();
 });
 
 
@@ -26,26 +26,32 @@ gulp.task('clean', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-var imagemin= require('gulp-imagemin');
-var path = require('path');
+var imagemin = require('gulp-imagemin');
+// var fs = require('fs');
 gulp.task('imagemin', function () {
-    return gulp.src( 'src/images/**/*.jpg' )
+	// var images = [];
+	return gulp.src( 'src/images/**/*.jpg' )
         .pipe(imagemin())
+		// .pipe(function (file) {
+		// 	images += {'name':file.basename, 'path':file.dirname};
+		// 	return file;
+		// })
         .pipe(gulp.dest('build/'));
+	// for (image in images) {
+	// 	fs.writeFile(image.path + 'images.json', , 'utf8', callback);
+	// }
 });
 
 var run = gulp.series('nunjucks');
 
 var watch = require('gulp-watch');
-gulp.task('watch', function (done) {
-	watch('src/**/*', function () {
-		run();
+gulp.task('watch', function () {
+	return watch('src/**/*', function () {
+		return run();
 	});
-	done();
 });
 
 
 gulp.task('default', function (done) {
-	run();
-	done();
+	return run();
 });
