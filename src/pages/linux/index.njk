@@ -1,5 +1,7 @@
 {% extends "layout.njk" %}
 
+{% from "macros.njk" import table, link %}
+
 {% set activePage="linux" %}
 
 {% block head %} Linux {% endblock %}
@@ -22,7 +24,6 @@
 	<p>
 		This is my Dell Thin Client that I bought to run docker containers 24/7 without having a large effect on the power bill. I chose it over something like a Raspberry Pi becuase purchasing it used worked out to be about the same cost, for the same RAM, a proper Intel 64-bit CPU, and 120GB of SSD storage. It is currently running 7 containers.
 		<div class="container">
-			{% from "macros.njk" import table %}
 			{{ table([
 				[
 					'Container',
@@ -53,11 +54,37 @@
 					]
 				]
 			]) }}
-	  	</div>
-
+		</div>
 	</p>
 	<hr> <code class="large black bg-warning">LilBox</code>
 	<p>
-		LilBox is my server for when there is a need for processing power or large / valuable data. It is running Proxmox with a few VM's on it, which I wont be listing because they change quite frequently.
+		LilBox is my server for when there is a need for processing power or large/valuable data. It is running Proxmox with a few virtual machines on it. The main ones are as follows:
+		<div class="container">
+			{{ table([
+				[
+					'VM',
+					'Usage'
+				],
+				[
+					[
+						'Open Media Valut',
+						'Software RAID and Samba Shares'
+					], [
+						'Minecraft',
+						'Hosting multiple Minecraft servers, connected by BungeeCord on Teeny'
+					], [
+						'Jellyfin',
+						'Streaming of movies & TV from OMV storage'
+					]
+				]
+			]) }}
+		</div>
+		Other than these I like to experiment so there are more being added and removed from time to time.
+	</p>
+	<hr> <code class="large black bg-warning">The Minecraft</code>
+	<p>
+		Although a Minecraft server typically isn't very impressive, and certainly not enough for its own section, I think that my Minecraft setup is unique enough that it warrents this area. As mentioned above, the all of the Minecraft servers are proxied through BungeeCord running on Teeny. When players join they are first put into a lobby where they are presented with signs corresponing to which gameplay server they want to join. While they do this, a custom plugin is running in the background which will ping LilBox to check if it is awake. If it is then players join the other servers running on LilBox like normal. Otherwise it will send magic packets for wake on lan to LilBox, and restrict players from joining until the server has fully woken. <br><br>
+		Once the player leaves the server, it will return to sleep after a few minutes using the {{ link('Autosuspend', 'https://github.com/languitar/autosuspend') }} daemon running directly on the machine, outside of any VMs. The benefit of this is that it is configured to use network traffic as the criteria to suspend, so whenever the server is done being used, for any usage, the daemon will put it back to sleep. <br><br>
+		This would typically be overcomplicated for a Minecraft server, but I have chosen to operate it like this due to the benefits in power savings by using a lower consumption machine for 24/7 availability, and only activating the main machine when it is needed. This is also the first time I was able to incorperate multiple machines working together continually and fluently, which has been quite a learning experiance.1
 	</p>
 {% endblock %}

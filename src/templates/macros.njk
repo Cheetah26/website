@@ -11,4 +11,9 @@
 			</tr>
 		{% endfor %}
 	</table>
+	<br>
 {% endmacro %}
+
+{% macro link(name, ref) %}
+		<a href="{{ ref }}">{{ name }}</a>
+{% endmacro %}}
