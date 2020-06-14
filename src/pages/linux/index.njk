@@ -8,7 +8,7 @@
 
 {% block content %}
 	<p>
-		I began experimenting with <sub class="nano">GNU/</sub>Linux in the summer of 2018. I first tried Arch Linux dualbooting on my desktop. I have heard it argued that Arch is a poor choice for a beginner, but I think that it actually ended up being beneficial because of how quickly it encourages the user learn about the OS, and how the pieces of a modern computing experiance fit together. It also gave me a greater respect for the programs that I use daily after using command line alternatives while I pieced together the components of a desktop environment.
+		I began experimenting with <sub class="nano">GNU/</sub>Linux in the summer of 2018. I first tried Arch Linux dualbooting on my desktop. I have heard it argued that Arch is a poor choice for a beginner, but I think that it actually ended up being beneficial because of how quickly it encourages the user learn about the OS, and how the pieces of a modern computing experience fit together. It also gave me a greater respect for the programs that I use daily after using command line alternatives while I pieced together the components of a desktop environment.
 	</p>
 	<p>
 		Currently I run Linux on all my computers. My desktop contuinues to dualboot running Manjaro and Windows 10. My laptop and a Dell Thin Client which I use for low power server applications run Debian. I also have another server machine that is powered on via wake on lan to handle the tasks too stressful for the Thin Client running Proxmox with a few VMs.
@@ -18,11 +18,11 @@
 	<hr> <code class="large black bg-warning">Laptop</code>
 	<br>
 	<p>
-		I will start with my laptop since it's the machine I interact the most with, although arguably the least interesting setup-wise. It is a cheap Toshiba Satellite that I'm surprised has held up as well as it has. As mentioned previously it is running Debian with DWM as my window manager. I realize this is a bit of a strange combination, but I like that Debian has a lot of resources online in the rare chance I encounter a problem, while DWM gives me something to tinker with in my free time. I also really enjoy using tiling WM. Before switching to Linux there were a few years where I was really into setting up AutoHotKey to achieve a similar workflow. While some might say that keyboard-focused layouts are impractical, this is incorrect because trackpads cannot have the same precistion, and are less conveinient even considering the extra time to learn keyboard shortcuts.
+		I will start with my laptop since it's the machine I interact the most with, although arguably the least interesting setup-wise. It is a cheap Toshiba Satellite that I'm surprised has held up as well as it has. As mentioned previously it is running Debian with DWM as my window manager. I realize this is a bit of a strange combination, but I like that Debian has a lot of resources online in the rare chance I encounter a problem, while DWM gives me something to tinker with in my free time. I also really enjoy using tiling WM. Before switching to Linux there were a few years where I was really into setting up AutoHotKey to achieve a similar workflow. While some might say that keyboard-focused layouts are impractical, this is incorrect because trackpads cannot have the same precision, and are less convenient even considering the extra time to learn keyboard shortcuts.
 	</p>
 	<hr> <code class="large black bg-warning">Teeny</code>
 	<p>
-		This is my Dell Thin Client that I bought to run docker containers 24/7 without having a large effect on the power bill. I chose it over something like a Raspberry Pi becuase purchasing it used worked out to be about the same cost, for the same RAM, a proper Intel 64-bit CPU, and 120GB of SSD storage. It is currently running 7 containers.
+		This is my Dell Thin Client that I bought to run docker containers 24/7 without having a large effect on the power bill. I chose it over something like a Raspberry Pi because purchasing it used worked out to be about the same cost, for the same RAM, a proper Intel 64-bit CPU, and 120GB of SSD storage. It is currently running 7 containers.
 		<div class="container">
 			{{ table([
 				[
@@ -50,7 +50,7 @@
 						'The Minecraft server proxy and connector'
 					], [
 						'Lobby',
-						'The obligitory Minecraft server (more on this and BungeeCord later)'
+						'The obligatory Minecraft server (more on this and BungeeCord later)'
 					]
 				]
 			]) }}
@@ -67,7 +67,7 @@
 				],
 				[
 					[
-						'Open Media Valut',
+						'Open Media Vault',
 						'Software RAID and Samba Shares'
 					], [
 						'Minecraft',
@@ -83,8 +83,8 @@
 	</p>
 	<hr> <code class="large black bg-warning">The Minecraft</code>
 	<p>
-		Although a Minecraft server typically isn't very impressive, and certainly not enough for its own section, I think that my Minecraft setup is unique enough that it warrents this area. As mentioned above, the all of the Minecraft servers are proxied through BungeeCord running on Teeny. When players join they are first put into a lobby where they are presented with signs corresponing to which gameplay server they want to join. While they do this, a custom plugin is running in the background which will ping LilBox to check if it is awake. If it is then players join the other servers running on LilBox like normal. Otherwise it will send magic packets for wake on lan to LilBox, and restrict players from joining until the server has fully woken. <br><br>
+		Although a Minecraft server typically isn't very impressive, and certainly not enough for its own section, I think that my Minecraft setup is unique enough that it warrants this area. As mentioned above, the all of the Minecraft servers are proxied through BungeeCord running on Teeny. When players join they are first put into a lobby where they are presented with signs corresponding to which gameplay server they want to join. While they do this, a custom plugin is running in the background which will ping LilBox to check if it is awake. If it is then players join the other servers running on LilBox like normal. Otherwise it will send magic packets for wake on lan to LilBox, and restrict players from joining until the server has fully woken. <br><br>
 		Once the player leaves the server, it will return to sleep after a few minutes using the {{ link('Autosuspend', 'https://github.com/languitar/autosuspend') }} daemon running directly on the machine, outside of any VMs. The benefit of this is that it is configured to use network traffic as the criteria to suspend, so whenever the server is done being used, for any usage, the daemon will put it back to sleep. <br><br>
-		This would typically be overcomplicated for a Minecraft server, but I have chosen to operate it like this due to the benefits in power savings by using a lower consumption machine for 24/7 availability, and only activating the main machine when it is needed. This is also the first time I was able to incorperate multiple machines working together continually and fluently, which has been quite a learning experiance.1
+		This would typically be overcomplicated for a Minecraft server, but I have chosen to operate it like this due to the benefits in power savings by using a lower consumption machine for 24/7 availability, and only activating the main machine when it is needed. This is also the first time I was able to incorporate multiple machines working together continually and fluently, which has been quite a learning experiance.1
 	</p>
 {% endblock %}
