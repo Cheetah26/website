@@ -5,15 +5,14 @@ var nunjucksRender = require('gulp-nunjucks-render');
 gulp.task('nunjucks', function() {
 	gulp.src(['src/pages/**/*', '!src/pages/**/*.+(html|njk)']).pipe(gulp.dest('build'));
 	return gulp.src('src/pages/**/*.+(html|njk)')
-	    .pipe(data(function() {
-	      return require('./src/data.json')
-	    }))
+	    // .pipe(data(function() {
+	    //   return require('./src/data.json')
+	    // }))
 		.pipe(nunjucksRender({
 			path: ['src/templates']
 		}))
 		.pipe(gulp.dest('build'));
 });
-
 
 // var prettify = require('gulp-html-prettify');
 var htmlmin = require('gulp-htmlmin');

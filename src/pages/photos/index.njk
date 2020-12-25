@@ -1,68 +1,20 @@
 {% extends "layout.njk" %}
 
+{% from "macros.njk" import link %}
+
 {% set activePage="photos" %}
 
 {% block head %} Photos {% endblock %}
 
 {% block content %}
 	<p>
-		While I'm certainly no professional photographer, I have been told a few times that some of the pictures I take are pretty, so I figured I would share a few favorites for you to enjoy.
-		<div class="small">If any of these look upside-down, I appologize. I've fixed it multiple times and the problem continues to haunt me.</div>
+        Some quick notes about the photo library.
 	</p>
-	<hr>
-
-	{% set path = baseURL + "/photos/img" %}
-
-	<div class="row">
-		<div class="column">
-			<img src="{{ path }}/1.jpg">
-			<img src="{{ path }}/4.jpg">
-			<img src="{{ path }}/7.jpg">
-			<img src="{{ path }}/10.jpg">
-			<img src="{{ path }}/13.jpg">
-		</div>
-		<div class="column">
-			<img src="{{ path }}/2.jpg">
-			<img src="{{ path }}/5.jpg">
-			<img src="{{ path }}/8.jpg">
-			<img src="{{ path }}/11.jpg">
-			<img src="{{ path }}/14.jpg">
-		</div>
-		<div class="column">
-			<img src="{{ path }}/3.jpg">
-			<img src="{{ path }}/6.jpg">
-			<img src="{{ path }}/9.jpg">
-			<img src="{{ path }}/12.jpg">
-			<img src="{{ path }}/15.jpg">
-	</div>
-
-	<style>
-	.row {
-		  display: flex;
-		  flex-wrap: wrap;
-		  padding: 0 4px;
-		}
-		.column {
-		  flex: 33%;
-		  max-width:33%;
-		  padding: 0 4px;
-		}
-		.column img {
-		  margin-top: 8px;
-		  vertical-align: middle;
-		  width: 100%;
-		}
-		@media screen and (max-width: 800px) {
-		  .column {
-		    flex: 50%;
-		    max-width: 50%;
-		  }
-		}
-		@media screen and (max-width: 600px) {
-		  .column {
-		    flex: 100%;
-		    max-width: 100%;
-		  }
-		}
-	</style>
+	<ul>
+		<li>I have opted to use Piwigo as the gallery. While it is a bit overkill for just displaying images, I think it works well enough to justify the time saved by using it.</li>
+		<li>Secondly, please Keep in mind that everything here is hosted on a thin client over my home network so loading times may not be the best.</li>
+	</ul>
+	<p>
+		<a href="https://photo.shanemongan.com", class="btn primary">Continue to library</a>
+	</p>
 {% endblock %}
