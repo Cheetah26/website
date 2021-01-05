@@ -1,19 +1,32 @@
 {% extends "layout.njk" %}
 
 {% set activePage="fun" %}
+{% set depth="../" %}
 
 {% block head %} Fun. {% endblock %}
 
 {% block content %}
 	<p>
-		Some of these may be styled differently than the rest of this website, time and preferences tend to shift together. They also aren't likely to be mobile compatible so apologies in advance.
+		Miscellaneous writing on experiences / things I've done.
+	</p>
+	<ul>
+		<li><a href="./writing/graduation.html">Graduating in a pandemic</a></li>
+		<li><a href="./writing/astra.html">Refurbishing the StarCraft</a></li>
+	</ul>
+	
+	<hr>
+
+	<p>
+		Small web-compatible "projects" I have made. Mostly for learning purposes.
 	</p>
 	<ul>
 		<li><a href="./snake/snake.html">Snake</a></li>
 	</ul>
+
 	<hr>
+
 	<p>
-		Here are also some papers I've written for school. I'm not sure what to do with them anymore, but I'm proud of them, and hope that maybe you'll find them interesting.
+		Here are some papers I wrote in high school. I'm not sure what to do with them anymore, but maybe someone will find them interesting.
 	</p>
 	{# Convert this to Nunjucks Macro for easy editability #}
 	<div class="row">

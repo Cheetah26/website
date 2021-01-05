@@ -2,6 +2,9 @@
 build/
 dist/
 
+# VScode
+.vscode
+
 # Logs
 logs
 *.log

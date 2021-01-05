@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Shane Mongan</title>
-		<link rel="icon" type="image/png" href="{%if activePage != 'home' %}.{% endif %}./favicon.ico">
+		<link rel="icon" type="image/png" href="{{ depth }}favicon.ico">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="{%if activePage != 'home' %}.{% endif %}./css/dark.min.css">
-		<link rel="stylesheet" href="{%if activePage != 'home' %}.{% endif %}./css/mono.min.css">
-		<link rel="stylesheet" href="{%if activePage != 'home' %}.{% endif %}./css/color.min.css">
+		<link rel="stylesheet" href="{{ depth }}css/dark.min.css">
+		<link rel="stylesheet" href="{{ depth }}css/mono.min.css">
+		<link rel="stylesheet" href="{{ depth }}css/color.min.css">
 		{% block additionalHeaders %} {% endblock %}
 	</head>
 
