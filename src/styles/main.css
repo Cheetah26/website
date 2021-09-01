@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');
+
+/*
+  -- STYLES ORDER --
+  color
+  background-color
+  border
+  font
+  flex
+  width
+  height
+  morgin
+  padding
+  flex
+*/
+
+html {
+  color           : #333;
+  background-color: #FFFFFA;
+  font            : 1rem 'Kaisei Decol', serif;
+  font-weight     : 400;
+  max-width       : 900px;
+  margin          : 0 auto;
+  padding         : 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+}
+
+a:link,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+a:visited {
+  color: #666;
+}
+
+li {
+  margin: 1rem 0;
+}
+
+.header {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.links {
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-around;
+}
+.links a {
+  color          : inherit;
+  border         : 1px solid #2B2B2B;
+  font-size      : 1.25rem;
+  text-decoration: none;
+  margin         : 0 0 0 1rem;
+  padding        : 0.25rem;
+}
+
+@media only screen and (min-width: 480px) {
+  .header {
+    flex-direction: row;
+  }
+  .links {
+    flex-direction: column;
+  }
+}

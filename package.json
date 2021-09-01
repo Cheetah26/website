@@ -1,0 +1,26 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx gulp build",
+    "serve": "npx gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cheetah26/website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cheetah26/website/issues"
+  },
+  "homepage": "https://github.com/Cheetah26/website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2",
+    "gulp-pug": "^5.0.0"
+  }
+}

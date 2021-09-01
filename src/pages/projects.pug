@@ -1,0 +1,12 @@
+extends ../components/_template.pug 
+
+block append content
+  p All of my programming projects are on my #[a(href="http://github.com/Cheetah26", target="_blank", rel="noopener noreferrer") GitHub].
+  p Here are some select ones that I found interesting to work on. Being that I like sysadmin things, I have also put a lot of time into homelabbing and learning about various topics (namely firewalls, Linux, and Docker). Unfortunately I can't simply make a GitHub repo to show it off.
+  ul
+    li
+      a(href="https://github.com/Cheetah26/covid-bot") Covid Bot 
+      | - Created in my freshmen year of college at UNH, this Discord bot pulls a pdf from UNH's covid dashboard each day. It then converts the PDF to an image to be uploaded to any servers with it enabled. Used by many in an unofficial UNH discord server, it taught me the joys and pains of creating something that people relied on.
+    li
+      a(href="https://netflix-statistics.shanemongan.com") Netflix Statistics 
+      | - Fun little project to use Netflix viewing history to show watch trends. Simply graphs number of views over a monthy or yearly basis, for all watches or a particular show. Source code #[a(href="https://github.com/Cheetah26/netflix-statistics") here].
