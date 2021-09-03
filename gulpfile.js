@@ -16,8 +16,8 @@ gulp.task('build_css', function() {
 })
 
 gulp.task('copy_files', function() {
-  return gulp.src('./src/files/**/*.*')
-    .pipe(gulp.dest('./dist/files'))
+  return gulp.src(['./src/**/*.*', '!./src/**/*.css', '!./src/**/*.pug'])
+    .pipe(gulp.dest('./dist/'))
 })
 
 gulp.task('build', gulp.series('build_html', 'build_css', 'copy_files'));
