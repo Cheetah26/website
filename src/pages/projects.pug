@@ -2,11 +2,14 @@ extends ../components/_template.pug
 
 block append content
   p All of my programming projects are on my #[a(href="http://github.com/Cheetah26", target="_blank", rel="noopener noreferrer") GitHub].
-  p Here are some select ones that I found interesting to work on. Being that I like sysadmin things, I have also put a lot of time into homelabbing and learning about various topics (namely firewalls, Linux, and Docker). Unfortunately I can't simply make a GitHub repo to show it off.
+  p Here are some select ones that I found interesting to work on. Since I like sysadmin things, I have also put a lot of time into homelabbing and learning about various topics (namely firewalls, Linux, and Docker). Unfortunately I can't simply share those projects in a GitHub repo.
   ul
     li
       a(href="https://github.com/Cheetah26/covid-bot") Covid Bot 
       | - Created in my freshmen year of college at UNH, this Discord bot downloads a PDF of the latest testing results from UNH's covid dashboard each day. It then converts the PDF to an image and uploads it to any Discord channels with the bot enabled. With its posts referenced daily by many peers, it taught me the joys and stresses of creating something others rely on.
+    
+    li ElasticLogger - A Minecraft server plugin which sends in-game events and server metrics to Elasticsearch. I also created two custom Kibana dashboards: one for an overview of all connected Minecraft servers, and another for looking at logs and statistics about any specific player.
+    
     li
       a(href="https://netflix-statistics.shanemongan.com") Netflix Statistics 
-      | - A fun weekend project which uses Netflix viewing history to display watch trends. Simply graphs number of views over a monthy or yearly basis, for all activity or only a particular show.
+      | - A fun weekend project which uses Netflix viewing history to display watch trends. Simply graphs number of views over a monthly or yearly basis, for all activity or only a particular show. 
