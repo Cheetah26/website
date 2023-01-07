@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');
+@font-face {
+  font-family: 'Kaisei Decol';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/files/Kaisei_Decol/KaiseiDecol-Regular.ttf) format('truetype');
+}
 
 /*
   -- STYLES ORDER --
