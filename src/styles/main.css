@@ -34,6 +34,7 @@ h2,
 h3,
 h4 {
   font-weight: 600;
+  margin: 0;
 }
 
 h2 {
@@ -59,9 +60,13 @@ li {
   margin: 1rem 0;
 }
 
+img {
+  max-width: 100%;
+}
+
 .header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -69,7 +74,8 @@ li {
 .links {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 
 .links a {
@@ -77,16 +83,6 @@ li {
   border: 1px solid #2B2B2B;
   font-size: 1.25rem;
   text-decoration: none;
-  margin: 0 0 0 1rem;
-  padding: 0.25rem;
-}
-
-@media only screen and (min-width: 480px) {
-  .header {
-    flex-direction: row;
-  }
-
-  .links {
-    flex-direction: column;
-  }
+  margin: 0.5rem 0 0 1rem;
+  padding: 0.2rem;
 }
